@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sushruta Samhita — Ancient Art of Rhinoplasty</title>
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron: #E8750A;
+    --turmeric: #F0A500;
+    --deep-red: #8B1A1A;
+    --copper: #B5651D;
+    --parchment: #F5ECD7;
+    --dark-parchment: #E8D5B0;
+    --ink: #2C1810;
+    --forest: #2D5016;
+    --sage: #7A9E4E;
+    --cream: #FDF6E8;
+    --gold: #C9941A;
+    --shadow: rgba(44,24,16,0.3);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--ink);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', serif;
+    overflow-x: hidden;
+  }
+
+  /* GRAIN TEXTURE OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: linear-gradient(180deg, rgba(44,24,16,0.98) 0%, rgba(44,24,16,0.92) 100%);
+    border-bottom: 2px solid var(--gold);
+    backdrop-filter: blur(8px);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .nav-brand {
+    font-family: 'Yatra One', cursive;
+    color: var(--turmeric);
+    font-size: 1.3rem;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 20px rgba(240,165,0,0.4);
+  }
+
+  .nav-brand span { color: var(--saffron); }
+
+  .nav-steps {
+    display: flex;
+    gap: 0;
+    list-style: none;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav-steps::-webkit-scrollbar { display: none; }
+
+  .nav-steps li a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    color: var(--dark-parchment);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: all 0.25s;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .nav-steps li a .step-num {
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: var(--saffron);
+    color: white;
+    font-size: 0.65rem;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+    transition: all 0.25s;
+  }
+
+  .nav-steps li a:hover {
+    color: var(--turmeric);
+    background: rgba(240,165,0,0.1);
+  }
+
+  .nav-steps li a:hover .step-num {
+    background: var(--turmeric);
+    transform: scale(1.1);
+  }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    background: linear-gradient(160deg, #1a0a05 0%, #2C1810 40%, #3d2010 70%, #1a0a05 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-mandala {
+    position: absolute;
+    width: 700px; height: 700px;
+    opacity: 0.06;
+    animation: spin 60s linear infinite;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @keyframes spin { to { transform: translate(-50%,-50%) rotate(360deg); } }
+
+  .hero-lotus {
+    width: 90px;
+    margin-bottom: 2rem;
+    animation: float 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px rgba(240,165,0,0.6));
+  }
+
+  @keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+
+  .hero-sanskrit {
+    font-family: 'Tiro Devanagari Sanskrit', serif;
+    font-size: 2rem;
+    color: var(--turmeric);
+    opacity: 0.8;
+    margin-bottom: 1rem;
+    letter-spacing: 0.1em;
+    animation: fadeSlide 1.2s ease forwards;
+  }
+
+  .hero-title {
+    font-family: 'Yatra One', cursive;
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    color: var(--parchment);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    animation: fadeSlide 1.4s ease forwards;
+  }
+
+  .hero-title em {
+    color: var(--turmeric);
+    font-style: normal;
+    display: block;
+    font-size: 0.55em;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--dark-parchment);
+    max-width: 600px;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+    font-style: italic;
+    animation: fadeSlide 1.6s ease forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes fadeSlide {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-cta {
+    display: inline-block;
+    padding: 14px 40px;
+    background: linear-gradient(135deg, var(--saffron), var(--copper));
+    color: white;
+    text-decoration: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    box-shadow: 0 4px 20px rgba(232,117,10,0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+    transition: all 0.3s;
+    animation: fadeSlide 1.8s ease forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+
+  .hero-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(232,117,10,0.5);
+  }
+
+  .hero-scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--turmeric);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.7;
+    animation: bounce 2s ease-in-out infinite;
+  }
+
+  @keyframes bounce {
+    0%,100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* ── SECTION WRAPPER ── */
+  .page-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 2rem 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-section:nth-child(odd) {
+    background: linear-gradient(135deg, #F5ECD7 0%, #EDD9AC 100%);
+  }
+  .page-section:nth-child(even) {
+    background: linear-gradient(135deg, #FDF6E8 0%, #F0E0B8 100%);
+  }
+
+  .section-inner {
+    max-width: 1100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .section-inner.reverse { direction: rtl; }
+  .section-inner.reverse > * { direction: ltr; }
+
+  /* ── STEP BADGE ── */
+  .step-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+  }
+
+  .step-badge .num {
+    width: 48px; height: 48px;
+    background: linear-gradient(135deg, var(--saffron), var(--copper));
+    color: white;
+    font-family: 'Yatra One', cursive;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 12px rgba(232,117,10,0.4);
+    flex-shrink: 0;
+  }
+
+  .step-badge .label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--saffron);
+  }
+
+  .section-title {
+    font-family: 'Yatra One', cursive;
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-sanskrit {
+    font-family: 'Tiro Devanagari Sanskrit', serif;
+    font-size: 1.1rem;
+    color: var(--copper);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .section-body {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #3a2210;
+    margin-bottom: 1.5rem;
+  }
+
+  .info-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 1rem;
+  }
+
+  .pill {
+    padding: 5px 14px;
+    background: rgba(232,117,10,0.12);
+    border: 1px solid rgba(232,117,10,0.3);
+    border-radius: 20px;
+    font-size: 0.82rem;
+    color: var(--deep-red);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── ANIMATIONS / ILLUSTRATIONS ── */
+  .anim-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    max-width: 440px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(44,24,16,0.25), 0 4px 12px rgba(44,24,16,0.1);
+  }
+
+  canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+  }
+
+  /* ── DIVIDER ── */
+  .ornament-divider {
+    text-align: center;
+    padding: 3rem;
+    background: var(--ink);
+    position: relative;
+  }
+
+  .ornament-divider::before {
+    content: '';
+    display: block;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin-bottom: 1.5rem;
+  }
+
+  .ornament-divider::after {
+    content: '✦ ॐ ✦';
+    font-family: 'Tiro Devanagari Sanskrit', serif;
+    color: var(--turmeric);
+    font-size: 1.5rem;
+    display: block;
+    opacity: 0.8;
+    margin-top: 1.5rem;
+  }
+
+  /* ── PROGRESS BAR ── */
+  .progress-bar {
+    position: fixed;
+    top: 64px; left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--saffron), var(--turmeric));
+    z-index: 999;
+    width: 0%;
+    transition: width 0.1s;
+    box-shadow: 0 0 8px rgba(240,165,0,0.6);
+  }
+
+  /* ── TOOLTIP CARDS ── */
+  .ingredient-card {
+    background: white;
+    border-left: 3px solid var(--saffron);
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--ink);
+    box-shadow: 0 2px 8px rgba(44,24,16,0.08);
+  }
+
+  .ingredient-card strong {
+    color: var(--saffron);
+    display: block;
+    margin-bottom: 3px;
+    font-size: 0.95rem;
+  }
+
+  /* ── INSTRUMENTS GRID ── */
+  .instrument-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 1rem;
+  }
+
+  .inst-card {
+    background: rgba(232,117,10,0.07);
+    border: 1px solid rgba(181,101,29,0.3);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--ink);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .inst-card:hover {
+    background: rgba(232,117,10,0.18);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(232,117,10,0.2);
+  }
+
+  .inst-card .inst-icon { font-size: 1.6rem; display: block; margin-bottom: 6px; }
+  .inst-card .inst-name { font-weight: 700; color: var(--deep-red); display: block; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: var(--dark-parchment);
+    text-align: center;
+    padding: 3rem 2rem;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    border-top: 2px solid var(--gold);
+  }
+
+  footer .footer-title {
+    font-family: 'Yatra One', cursive;
+    color: var(--turmeric);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  footer .footer-ref {
+    color: var(--copper);
+    font-style: italic;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .section-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .section-inner.reverse { direction: ltr; }
+    .nav-steps li a { padding: 6px 8px; font-size: 0.65rem; }
+    .nav-brand { font-size: 1rem; }
+    .instrument-grid { grid-template-columns: repeat(2,1fr); }
+  }
+
+  /* Pulse ring */
+  @keyframes pulse-ring {
+    0% { transform: scale(0.8); opacity: 0.8; }
+    100% { transform: scale(1.5); opacity: 0; }
+  }
+
+  .active-dot {
+    display: inline-block;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--saffron);
+    position: relative;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  .active-dot::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: var(--saffron);
+    animation: pulse-ring 1.5s ease-out infinite;
+  }
+
+  /* reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- PROGRESS BAR -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">सुश्रुत <span>Samhita</span></div>
+  <ul class="nav-steps">
+    <li><a href="#s1"><span class="step-num">1</span>Patient Prep</a></li>
+    <li><a href="#s2"><span class="step-num">2</span>Anaesthesia</a></li>
+    <li><a href="#s3"><span class="step-num">3</span>Instruments</a></li>
+    <li><a href="#s4"><span class="step-num">4</span>Incision</a></li>
+    <li><a href="#s5"><span class="step-num">5</span>Flap Harvest</a></li>
+    <li><a href="#s6"><span class="step-num">6</span>Reconstruction</a></li>
+    <li><a href="#s7"><span class="step-num">7</span>Wound Care</a></li>
+    <li><a href="#s8"><span class="step-num">8</span>Recovery</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <svg class="hero-mandala" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="200" cy="200" r="190" stroke="#C9941A" stroke-width="1"/>
+    <circle cx="200" cy="200" r="150" stroke="#C9941A" stroke-width="0.5"/>
+    <circle cx="200" cy="200" r="100" stroke="#C9941A" stroke-width="1"/>
+    <circle cx="200" cy="200" r="60" stroke="#C9941A" stroke-width="0.5"/>
+    <line x1="10" y1="200" x2="390" y2="200" stroke="#C9941A" stroke-width="0.5"/>
+    <line x1="200" y1="10" x2="200" y2="390" stroke="#C9941A" stroke-width="0.5"/>
+    <line x1="55" y1="55" x2="345" y2="345" stroke="#C9941A" stroke-width="0.5"/>
+    <line x1="345" y1="55" x2="55" y2="345" stroke="#C9941A" stroke-width="0.5"/>
+    <polygon points="200,20 380,310 20,310" fill="none" stroke="#C9941A" stroke-width="0.5"/>
+    <polygon points="200,380 380,90 20,90" fill="none" stroke="#C9941A" stroke-width="0.5"/>
+  </svg>
+
+  <!-- Lotus SVG -->
+  <svg class="hero-lotus" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="50" cy="60" rx="8" ry="5" fill="#C9941A" opacity="0.6"/>
+    <path d="M50 55 Q35 30 50 15 Q65 30 50 55Z" fill="#F0A500" opacity="0.85"/>
+    <path d="M50 55 Q25 35 20 20 Q40 25 50 55Z" fill="#E8750A" opacity="0.75"/>
+    <path d="M50 55 Q75 35 80 20 Q60 25 50 55Z" fill="#E8750A" opacity="0.75"/>
+    <path d="M50 55 Q15 45 10 30 Q30 38 50 55Z" fill="#B5651D" opacity="0.6"/>
+    <path d="M50 55 Q85 45 90 30 Q70 38 50 55Z" fill="#B5651D" opacity="0.6"/>
+  </svg>
+
+  <p class="hero-sanskrit">सुश्रुत संहिता — शल्यचिकित्सा</p>
+  <h1 class="hero-title">
+    Ayurvedic Plastic Surgery
+    <em>Ancient Wisdom of Sushruta</em>
+  </h1>
+  <p class="hero-subtitle">
+    Explore the world's first recorded system of plastic surgery, codified by the great sage Sushruta over 2,600 years ago in ancient India — a complete, step-by-step educational journey.
+  </p>
+  <a href="#s1" class="hero-cta">Begin the Journey ↓</a>
+
+  <div class="hero-scroll-hint">
+    <span>Scroll to explore</span>
+    <svg width="20" height="30" viewBox="0 0 20 30"><rect x="7" y="4" width="6" height="12" rx="3" fill="none" stroke="#F0A500" stroke-width="1.5"/><line x1="10" y1="20" x2="10" y2="28" stroke="#F0A500" stroke-width="1.5"/><polyline points="6,24 10,28 14,24" fill="none" stroke="#F0A500" stroke-width="1.5"/></svg>
+  </div>
+</section>
+
+<!-- ═══════════════ STEP 1: PATIENT PREPARATION ═══════════════ -->
+<section class="page-section" id="s1">
+  <div class="section-inner reveal">
+    <div>
+      <div class="step-badge"><div class="num">1</div><div class="label">Step One</div></div>
+      <h2 class="section-title">Patient Preparation &amp; Selection</h2>
+      <p class="section-sanskrit">रोगी परीक्षण एवं तैयारी</p>
+      <p class="section-body">
+        Before any surgical intervention, Sushruta prescribed a thorough examination of the patient — <em>Rogi Pariksha</em>. The surgeon assessed the patient's constitution (<em>Prakriti</em>), vitality (<em>Bala</em>), and mental fortitude. Only patients of strong constitution and stable mind were selected.
+      </p>
+      <p class="section-body">
+        A pre-operative regimen of <strong>Snehana</strong> (oil massages) and <strong>Svedana</strong> (steam therapy) was administered for 3–7 days to soften tissues and improve circulation. The patient fasted the night before surgery.
+      </p>
+      <div class="info-pills">
+        <span class="pill">🫒 Snehana (Oil Massage)</span>
+        <span class="pill">♨️ Svedana (Steam)</span>
+        <span class="pill">🌿 Dosha Balance</span>
+        <span class="pill">📿 Ritualistic Prayers</span>
+        <span class="pill">🌙 Night-before Fast</span>
+      </div>
+    </div>
+    <div class="anim-box">
+      <canvas id="c1" width="440" height="440"></canvas>
+    </div>
+  </div>
+</section>
+
+<div class="ornament-divider"></div>
+
+<!-- STEP 2: ANAESTHESIA -->
+<section class="page-section" id="s2">
+  <div class="section-inner reverse reveal">
+    <div>
+      <div class="step-badge"><div class="num">2</div><div class="label">Step Two</div></div>
+      <h2 class="section-title">Anaesthesia — The Ancient Sleep</h2>
+      <p class="section-sanskrit">संज्ञाहरण — मदकारी औषधि</p>
+      <p class="section-body">
+        Sushruta described the use of <em>Sammohini</em> — a potent herbal anaesthetic compound — to render patients unconscious before surgery. This is one of the world's earliest records of surgical anaesthesia.
+      </p>
+      <div class="ingredient-card">
+        <strong>🌿 Sammohinī Compound</strong>
+        Cannabis (<em>Vijaya</em>) + Datura (<em>Dhatura</em>) + Wine (<em>Madya</em>) + Aconite (<em>Vatsanabha</em>) administered as a paste or inhalant to induce deep sleep and numbness.
+      </div>
+      <div class="ingredient-card">
+        <strong>🍃 Local Numbing</strong>
+        Cold water packs, pressure bandaging, and herbal pastes of <em>Sarshapa</em> (mustard) and <em>Pippali</em> were applied to the operative site for local anaesthesia.
+      </div>
+      <div class="info-pills" style="margin-top:1rem">
+        <span class="pill">🌸 Cannabis (Vijaya)</span>
+        <span class="pill">☠️ Datura (Dhatura)</span>
+        <span class="pill">🍷 Fermented Wine</span>
+        <span class="pill">❄️ Cold Compression</span>
+      </div>
+    </div>
+    <div class="anim-box">
+      <canvas id="c2" width="440" height="440"></canvas>
+    </div>
+  </div>
+</section>
+
+<div class="ornament-divider"></div>
+
+<!-- STEP 3: INSTRUMENTS -->
+<section class="page-section" id="s3">
+  <div class="section-inner reveal">
+    <div>
+      <div class="step-badge"><div class="num">3</div><div class="label">Step Three</div></div>
+      <h2 class="section-title">Surgical Instruments — Shastra</h2>
+      <p class="section-sanskrit">शस्त्र — शल्यचिकित्सा उपकरण</p>
+      <p class="section-body">
+        Sushruta catalogued <strong>101 blunt instruments</strong> (<em>Yantras</em>) and <strong>20 sharp instruments</strong> (<em>Shastras</em>). Instruments were made of steel and tested for sharpness by shaving a hair. They were sterilised with boiling water and medicated smoke.
+      </p>
+      <div class="instrument-grid">
+        <div class="inst-card" title="The scalpel — primary cutting tool">
+          <span class="inst-icon">🗡️</span>
+          <span class="inst-name">Mandalagra</span>Circular scalpel
+        </div>
+        <div class="inst-card" title="Scissors for fine cutting">
+          <span class="inst-icon">✂️</span>
+          <span class="inst-name">Shastrika</span>Scissors
+        </div>
+        <div class="inst-card" title="Needle for suturing">
+          <span class="inst-icon">🪡</span>
+          <span class="inst-name">Suci</span>Surgical Needle
+        </div>
+        <div class="inst-card" title="Forceps for grasping tissue">
+          <span class="inst-icon">🔩</span>
+          <span class="inst-name">Sandamsa</span>Forceps
+        </div>
+        <div class="inst-card" title="Probe for exploration">
+          <span class="inst-icon">📍</span>
+          <span class="inst-name">Shalaka</span>Probe
+        </div>
+        <div class="inst-card" title="Speculum for orifice examination">
+          <span class="inst-icon">🔭</span>
+          <span class="inst-name">Svastika</span>Speculum
+        </div>
+      </div>
+    </div>
+    <div class="anim-box">
+      <canvas id="c3" width="440" height="440"></canvas>
+    </div>
+  </div>
+</section>
+
+<div class="ornament-divider"></div>
+
+<!-- STEP 4: INCISION -->
+<section class="page-section" id="s4">
+  <div class="section-inner reverse reveal">
+    <div>
+      <div class="step-badge"><div class="num">4</div><div class="label">Step Four</div></div>
+      <h2 class="section-title">The Incision — Chedana</h2>
+      <p class="section-sanskrit">छेदन — त्वचा का चीरा</p>
+      <p class="section-body">
+        Sushruta described eight types of incisions (<em>Astha Chedana</em>) suited to different anatomical regions. For rhinoplasty, the classic procedure involved measuring the exact size of the missing nasal portion using a <em>parna</em> (leaf) and transferring the pattern onto the forehead.
+      </p>
+      <p class="section-body">
+        The incision was made swiftly and decisively — Sushruta wrote that a hesitant surgeon cuts poorly, while an overly bold one cuts dangerously. <em>"Mridutvam Tikshnata ca"</em> — gentleness and sharpness both.
+      </p>
+      <div class="info-pills">
+        <span class="pill">📏 Leaf Template Measurement</span>
+        <span class="pill">✂️ Swift Single Stroke</span>
+        <span class="pill">🩸 Haemostasis Herbs</span>
+        <span class="pill">🌿 Turmeric Applied</span>
+      </div>
+    </div>
+    <div class="anim-box">
+      <canvas id="c4" width="440" height="440"></canvas>
+    </div>
+  </div>
+</section>
+
+<div class="ornament-divider"></div>
+
+<!-- STEP 5: FLAP HARVEST -->
+<section class="page-section" id="s5">
+  <div class="section-inner reveal">
+    <div>
+      <div class="step-badge"><div class="num">5</div><div class="label">Step Five</div></div>
+      <h2 class="section-title">Flap Harvest — The Pedicle Technique</h2>
+      <p class="section-sanskrit">त्वक्-पट्टिका — नासिका पुनर्निर्माण</p>
+      <p class="section-body">
+        The jewel of Sushruta's genius — the <strong>forehead flap (median forehead flap)</strong> for nasal reconstruction. A flap of skin was raised from the forehead, keeping one end attached (pedicle) to maintain blood supply. This technique is still called the "Indian Method" of rhinoplasty in modern medicine.
+      </p>
+      <p class="section-body">
+        The pedicle preserved the supratrochlear vessels. Sushruta understood that keeping the blood supply intact was essential for flap survival — a concept re-discovered in the West only in the 19th century.
+      </p>
+      <div class="info-pills">
+        <span class="pill">🧬 Forehead Flap Raised</span>
+        <span class="pill">🩸 Pedicle Preserved</span>
+        <span class="pill">🌱 Blood Supply Maintained</span>
+        <span class="pill">⚗️ Herb Paste Applied</span>
+        <span class="pill">🔁 "Indian Method" (Still Used)</span>
+      </div>
+    </div>
+    <div class="anim-box">
+      <canvas id="c5" width="440" height="440"></canvas>
+    </div>
+  </div>
+</section>
+
+<div class="ornament-divider"></div>
+
+<!-- STEP 6: RECONSTRUCTION -->
+<section class="page-section" id="s6">
+  <div class="section-inner reverse reveal">
+    <div>
+      <div class="step-badge"><div class="num">6</div><div class="label">Step Six</div></div>
+      <h2 class="section-title">Reconstruction &amp; Suturing — Sivana</h2>
+      <p class="section-sanskrit">सीवन — घाव का मिलाप</p>
+      <p class="section-body">
+        The harvested flap was folded and sutured onto the nasal defect. Sushruta described suture materials made from natural fibres — <em>Shana</em> (hemp), <em>Munja grass</em>, horsehair, and strips of intestine. Suturing was done with precision using the curved <em>Suci</em> needle.
+      </p>
+      <p class="section-body">
+        Small tubular reeds (<em>nala</em>) were inserted into the nostrils to maintain patency and allow breathing during healing. The raw surfaces were sprinkled with powdered liquorice, red sandalwood, and barberry to prevent infection.
+      </p>
+      <div class="ingredient-card">
+        <strong>🪡 Suture Materials</strong>
+        Hemp thread, Munja grass fibre, horsehair, silk, and bark strips — chosen based on wound depth and body location.
+      </div>
+      <div class="info-pills" style="margin-top:1rem">
+        <span class="pill">🌿 Reed Stents Inserted</span>
+        <span class="pill">🪡 Hemp Sutures</span>
+        <span class="pill">🌸 Sandalwood Powder</span>
+        <span class="pill">💛 Liquorice Dusting</span>
+      </div>
+    </div>
+    <div class="anim-box">
+      <canvas id="c6" width="440" height="440"></canvas>
+    </div>
+  </div>
+</section>
+
+<div class="ornament-divider"></div>
+
+<!-- STEP 7: WOUND CARE -->
+<section class="page-section" id="s7">
+  <div class="section-inner reveal">
+    <div>
+      <div class="step-badge"><div class="num">7</div><div class="label">Step Seven</div></div>
+      <h2 class="section-title">Wound Dressing — Vrana Bandhana</h2>
+      <p class="section-sanskrit">व्रण बन्धन — पट्टी एवं लेपन</p>
+      <p class="section-body">
+        Post-operatively, the wound was covered with medicated oils infused with <em>Tila</em> (sesame) and <em>Ghrita</em> (clarified butter). Bandaging was done in 14 recognised patterns based on body part — the forehead and nose required the <em>Shiroband</em> (head bandage) and <em>Nasya-band</em>.
+      </p>
+      <p class="section-body">
+        The wound was inspected daily. Signs of healthy healing (<em>Shuddha Vrana</em>) included absence of foul smell, minimal discharge, and pink granulation tissue. Infected wounds were treated with medicated fumigation and anti-microbial herbal pastes.
+      </p>
+      <div class="info-pills">
+        <span class="pill">🧈 Ghrita (Clarified Butter)</span>
+        <span class="pill">🌿 Sesame Oil Dressing</span>
+        <span class="pill">🩹 14 Bandage Types</span>
+        <span class="pill">🔥 Medicated Fumigation</span>
+        <span class="pill">🌡️ Daily Inspection</span>
+      </div>
+    </div>
+    <div class="anim-box">
+      <canvas id="c7" width="440" height="440"></canvas>
+    </div>
+  </div>
+</section>
+
+<div class="ornament-divider"></div>
+
+<!-- STEP 8: RECOVERY -->
+<section class="page-section" id="s8">
+  <div class="section-inner reverse reveal">
+    <div>
+      <div class="step-badge"><div class="num">8</div><div class="label">Step Eight</div></div>
+      <h2 class="section-title">Recovery &amp; Post-operative Care</h2>
+      <p class="section-sanskrit">स्वास्थ्य लाभ — पुनःस्थापना</p>
+      <p class="section-body">
+        Recovery followed a strict <em>Pathya</em> regimen — a therapeutic diet and lifestyle code. The patient avoided spicy, sour, and heavy foods. Light meals of rice porridge with ghee, milk, and easily digestible vegetables were prescribed.
+      </p>
+      <p class="section-body">
+        The pedicle connecting the flap to the forehead was severed only after 2–3 weeks once the flap had fully vascularised. Over weeks, the nose took its final shape. The donor site on the forehead healed with minimal scarring due to meticulous herbal application.
+      </p>
+      <div class="ingredient-card">
+        <strong>🌸 Post-op Herbal Protocol</strong>
+        Triphala washes for wound cleansing · Turmeric + Neem paste for antimicrobial protection · Brahmi for nerve healing · Ashwagandha for strength recovery.
+      </div>
+      <div class="info-pills" style="margin-top:1rem">
+        <span class="pill">🍚 Pathya Diet</span>
+        <span class="pill">✂️ Pedicle Severed (Week 2–3)</span>
+        <span class="pill">🌿 Triphala Wash</span>
+        <span class="pill">💛 Turmeric Healing</span>
+        <span class="pill">🧘 Complete Rest</span>
+      </div>
+    </div>
+    <div class="anim-box">
+      <canvas id="c8" width="440" height="440"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-title">सुश्रुत — Father of Surgery</div>
+  <p>This educational resource presents the documented surgical procedures of <strong>Sushruta Samhita</strong> (~600 BCE), one of humanity's oldest and most complete surgical texts.</p>
+  <p style="margin-top:0.5rem">The "Indian Method" of rhinoplasty described here influenced British surgeons in the 18th century and remains the basis of modern reconstructive nasal surgery.</p>
+  <div class="footer-ref">Educational purposes only · Based on Sushruta Samhita, Sharirasthana &amp; Chikitsasthana · © 2024 Ayurvedic Surgery Education</div>
+</footer>
+
+<script>
+// ── PROGRESS BAR ──
+window.addEventListener('scroll', () => {
+  const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+  document.getElementById('progressBar').style.width = scrolled + '%';
+});
+
+// ── REVEAL ON SCROLL ──
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.15 });
+revealEls.forEach(el => observer.observe(el));
+
+// ── CANVAS ANIMATIONS ──
+
+function parchmentBg(ctx, w, h, col1 = '#F5ECD7', col2 = '#E8D5B0') {
+  const g = ctx.createLinearGradient(0,0,w,h);
+  g.addColorStop(0, col1); g.addColorStop(1, col2);
+  ctx.fillStyle = g; ctx.fillRect(0,0,w,h);
+}
+
+// ── C1: Patient Prep — Mandala + Oil drops ──
+(function() {
+  const cv = document.getElementById('c1');
+  const ctx = cv.getContext('2d');
+  const W = 440, H = 440, cx = 220, cy = 220;
+  let t = 0;
+
+  function drawLotus(ctx, x, y, r, angle, alpha) {
+    ctx.save(); ctx.globalAlpha = alpha; ctx.translate(x,y); ctx.rotate(angle);
+    for (let i = 0; i < 8; i++) {
+      ctx.save(); ctx.rotate(i * Math.PI/4);
+      ctx.beginPath();
+      ctx.ellipse(0, -r*0.7, r*0.25, r*0.6, 0, 0, Math.PI*2);
+      ctx.fillStyle = i%2===0 ? '#E8750A' : '#F0A500';
+      ctx.fill(); ctx.restore();
+    }
+    ctx.restore();
+  }
+
+  function draw() {
+    ctx.clearRect(0,0,W,H);
+    parchmentBg(ctx, W, H, '#2C1810', '#1a0a05');
+    t++;
+
+    // Mandala rings
+    for (let r = 30; r <= 180; r += 30) {
+      ctx.beginPath();
+      ctx.arc(cx,cy,r,0,Math.PI*2);
+      ctx.strokeStyle = `rgba(201,148,26,${0.15 + 0.05*Math.sin(t/60+r)})`;
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+
+    // Rotating lotus
+    drawLotus(ctx, cx, cy, 80, t*0.005, 0.9);
+
+    // Oil drops falling
+    for (let i = 0; i < 5; i++) {
+      const y = ((t * 1.5 + i * 80) % 300) + 80;
+      const x = 80 + i * 70;
+      const a = 0.7 * Math.abs(Math.sin((t + i * 30) / 60));
+      ctx.beginPath();
+      ctx.ellipse(x, y, 5, 8, 0, 0, Math.PI*2);
+      ctx.fillStyle = `rgba(181,101,29,${a})`;
+      ctx.fill();
+      // ripple at bottom
+      if (y > 350) {
+        ctx.beginPath();
+        ctx.ellipse(x, 370, (y-350)*0.5, 3, 0, 0, Math.PI*2);
+        ctx.strokeStyle = `rgba(240,165,0,${0.5 - (y-350)/100})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+    }
+
+    // Sanskrit text
+    ctx.save();
+    ctx.font = '18px "Tiro Devanagari Sanskrit"';
+    ctx.fillStyle = 'rgba(240,165,0,0.7)';
+    ctx.textAlign = 'center';
+    ctx.fillText('स्नेहन', cx, cy + 130);
+    ctx.restore();
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ── C2: Anaesthesia — Smoke / vapour ──
+(function() {
+  const cv = document.getElementById('c2');
+  const ctx = cv.getContext('2d');
+  const W = 440, H = 440;
+  let t = 0;
+  const particles = [];
+
+  class Smoke {
+    constructor() { this.reset(); }
+    reset() {
+      this.x = 180 + Math.random()*80;
+      this.y = 320;
+      this.vx = (Math.random()-0.5)*0.8;
+      this.vy = -(0.5 + Math.random()*1.5);
+      this.r = 8 + Math.random()*20;
+      this.a = 0.4 + Math.random()*0.3;
+      this.life = 0;
+      this.maxLife = 120 + Math.random()*80;
+    }
+    update() {
+      this.x += this.vx; this.y += this.vy;
+      this.vx += (Math.random()-0.5)*0.05;
+      this.r += 0.3;
+      this.life++;
+      this.a = (1 - this.life/this.maxLife) * 0.35;
+      if (this.life > this.maxLife) this.reset();
+    }
+    draw(ctx) {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI*2);
+      ctx.fillStyle = `rgba(100,80,60,${this.a})`;
+      ctx.fill();
+    }
+  }
+
+  for (let i = 0; i < 30; i++) { const s = new Smoke(); s.life = Math.random()*100; particles.push(s); }
+
+  function draw() {
+    ctx.clearRect(0,0,W,H);
+    parchmentBg(ctx, W, H, '#1a0a05', '#2C1810');
+    t++;
+
+    // Bowl
+    ctx.beginPath();
+    ctx.ellipse(220, 340, 70, 18, 0, 0, Math.PI*2);
+    ctx.fillStyle = '#5C3317'; ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(150, 340); ctx.quadraticCurveTo(220, 390, 290, 340);
+    ctx.closePath(); ctx.fillStyle = '#3d1f0a'; ctx.fill();
+
+    // Glow in bowl
+    const grd = ctx.createRadialGradient(220,335,2,220,335,60);
+    grd.addColorStop(0,'rgba(255,150,0,0.4)');
+    grd.addColorStop(1,'rgba(255,80,0,0)');
+    ctx.fillStyle = grd; ctx.fillRect(140,300,160,60);
+
+    // Smoke particles
+    particles.forEach(p => { p.update(); p.draw(ctx); });
+
+    // Herb elements
+    for (let i = 0; i < 5; i++) {
+      const hx = 140 + i*28, hy = 330;
+      ctx.beginPath();
+      ctx.ellipse(hx, hy, 10, 5, Math.sin(t/40+i)*0.5, 0, Math.PI*2);
+      ctx.fillStyle = i%2===0 ? '#4a7a20' : '#7aaa30'; ctx.fill();
+    }
+
+    // Floating ZZZ for sleep
+    const zs = ['Z','z','Z'];
+    zs.forEach((z,i) => {
+      const zx = 260 + i*20;
+      const zy = 200 - ((t*0.5 + i*40) % 120);
+      const za = 1 - (zy - 80) / 120;
+      ctx.save();
+      ctx.globalAlpha = Math.max(0,za);
+      ctx.font = `${14+i*4}px serif`;
+      ctx.fillStyle = '#C9941A';
+      ctx.fillText(z, zx, zy);
+      ctx.restore();
+    });
+
+    ctx.font = '16px "Tiro Devanagari Sanskrit"';
+    ctx.fillStyle = 'rgba(240,165,0,0.7)';
+    ctx.textAlign = 'center';
+    ctx.fillText('सम्मोहिनी', 220, 400);
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ── C3: Instruments — rotating display ──
+(function() {
+  const cv = document.getElementById('c3');
+  const ctx = cv.getContext('2d');
+  const W = 440, H = 440, cx = 220, cy = 220;
+  let t = 0;
+  const tools = [
+    { name: 'Mandalagra', shape: 'scalpel' },
+    { name: 'Suci', shape: 'needle' },
+    { name: 'Sandamsa', shape: 'forceps' },
+    { name: 'Shalaka', shape: 'probe' },
+    { name: 'Shastrika', shape: 'scissors' },
+    { name: 'Svastika', shape: 'speculum' },
+  ];
+
+  function drawTool(ctx, x, y, type, angle, active) {
+    ctx.save(); ctx.translate(x,y); ctx.rotate(angle);
+    const col = active ? '#E8750A' : '#8B4513';
+    const glow = active ? 0.8 : 0.4;
+    ctx.strokeStyle = col; ctx.lineWidth = active ? 3 : 2;
+    ctx.globalAlpha = glow;
+    if (type === 'scalpel') {
+      ctx.beginPath(); ctx.moveTo(-30,0); ctx.lineTo(20,0);
+      ctx.moveTo(20,0); ctx.lineTo(30,-8); ctx.lineTo(25,0); ctx.lineTo(30,8); ctx.closePath();
+      ctx.stroke();
+    } else if (type === 'needle') {
+      ctx.beginPath(); ctx.moveTo(-25,-5); ctx.bezierCurveTo(-10,-5,10,5,25,5); ctx.stroke();
+      ctx.beginPath(); ctx.ellipse(-22,0,4,3,0,0,Math.PI*2); ctx.stroke();
+    } else if (type === 'forceps') {
+      ctx.beginPath(); ctx.moveTo(-5,-30); ctx.lineTo(0,0); ctx.lineTo(5,-30); ctx.stroke();
+      ctx.beginPath(); ctx.arc(0,0,5,0,Math.PI); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(-2,5); ctx.lineTo(-8,25); ctx.moveTo(2,5); ctx.lineTo(8,25); ctx.stroke();
+    } else if (type === 'probe') {
+      ctx.beginPath(); ctx.moveTo(-30,0); ctx.lineTo(28,0);
+      ctx.arc(28,0,3,0,Math.PI*2); ctx.stroke();
+    } else if (type === 'scissors') {
+      ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(-20,-20);
+      ctx.moveTo(0,0); ctx.lineTo(-20,20); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(25,0); ctx.stroke();
+    } else {
+      ctx.beginPath(); ctx.ellipse(0,0,20,12,0,0,Math.PI*2);
+      ctx.moveTo(-20,0); ctx.lineTo(-30,0); ctx.moveTo(20,0); ctx.lineTo(30,0); ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  function draw() {
+    ctx.clearRect(0,0,W,H);
+    parchmentBg(ctx, W, H, '#F5ECD7', '#E8D5B0');
+    t++;
+
+    // Outer circle
+    ctx.beginPath(); ctx.arc(cx,cy,170,0,Math.PI*2);
+    ctx.strokeStyle = 'rgba(181,101,29,0.2)'; ctx.lineWidth = 1; ctx.stroke();
+
+    tools.forEach((tool, i) => {
+      const a = (i / tools.length) * Math.PI*2 + t*0.008;
+      const x = cx + Math.cos(a)*140;
+      const y = cy + Math.sin(a)*140;
+      const active = Math.floor(t/90) % tools.length === i;
+      drawTool(ctx, x, y, tool.shape, a, active);
+      ctx.save();
+      ctx.globalAlpha = 0.7;
+      ctx.font = '11px "Cormorant Garamond"';
+      ctx.fillStyle = '#5C3317';
+      ctx.textAlign = 'center';
+      ctx.fillText(tool.name, x, y + 30);
+      ctx.restore();
+    });
+
+    // Center decoration
+    ctx.beginPath(); ctx.arc(cx,cy,30,0,Math.PI*2);
+    ctx.fillStyle = 'rgba(232,117,10,0.1)'; ctx.fill();
+    ctx.strokeStyle = '#C9941A'; ctx.lineWidth = 2; ctx.stroke();
+    ctx.font = '20px "Tiro Devanagari Sanskrit"';
+    ctx.fillStyle = '#8B1A1A'; ctx.textAlign = 'center';
+    ctx.fillText('शस्त्र', cx, cy+8);
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ── C4: Incision — leaf template + cut line ──
+(function() {
+  const cv = document.getElementById('c4');
+  const ctx = cv.getContext('2d');
+  const W = 440, H = 440;
+  let t = 0, phase = 0, cutProgress = 0;
+
+  function drawFace(ctx) {
+    // simple face silhouette
+    ctx.save();
+    // Head outline
+    ctx.beginPath();
+    ctx.ellipse(220, 200, 100, 130, 0, 0, Math.PI*2);
+    ctx.fillStyle = '#D4956A'; ctx.fill();
+    ctx.strokeStyle = '#8B4513'; ctx.lineWidth = 2; ctx.stroke();
+    // Forehead marking area
+    ctx.beginPath();
+    ctx.ellipse(220, 130, 45, 30, 0, 0, Math.PI*2);
+    ctx.fillStyle = 'rgba(232,117,10,0.25)'; ctx.fill();
+    ctx.setLineDash([4,4]);
+    ctx.strokeStyle = '#E8750A'; ctx.lineWidth = 1.5; ctx.stroke();
+    ctx.setLineDash([]);
+    // Nose area
+    ctx.beginPath();
+    ctx.moveTo(205,200); ctx.lineTo(220,240); ctx.lineTo(235,200);
+    ctx.strokeStyle = '#8B4513'; ctx.lineWidth = 2; ctx.stroke();
+    // Eyes
+    ctx.beginPath(); ctx.ellipse(195, 170, 12, 8, 0, 0, Math.PI*2);
+    ctx.fillStyle = '#3d1f0a'; ctx.fill();
+    ctx.beginPath(); ctx.ellipse(245, 170, 12, 8, 0, 0, Math.PI*2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function draw() {
+    ctx.clearRect(0,0,W,H);
+    parchmentBg(ctx, W, H, '#FDF6E8', '#F0E0B8');
+    t++;
+
+    drawFace(ctx);
+
+    // Animated leaf template
+    const leafY = 130 + Math.sin(t/60)*5;
+    ctx.save();
+    ctx.translate(220, leafY);
+    ctx.rotate(Math.sin(t/80)*0.1);
+    ctx.beginPath();
+    ctx.moveTo(0,-22); ctx.bezierCurveTo(20,-15,20,15,0,22);
+    ctx.bezierCurveTo(-20,15,-20,-15,0,-22);
+    ctx.fillStyle = 'rgba(74,122,32,0.5)'; ctx.fill();
+    ctx.strokeStyle = '#4a7a20'; ctx.lineWidth = 1.5; ctx.stroke();
+    // leaf vein
+    ctx.beginPath(); ctx.moveTo(0,-20); ctx.lineTo(0,20);
+    ctx.strokeStyle = 'rgba(74,122,32,0.7)'; ctx.lineWidth = 0.8; ctx.stroke();
+    ctx.restore();
+
+    // Incision line drawing animation
+    if (t > 100) {
+      cutProgress = Math.min(1, (t-100)/80);
+      const startX = 190, startY = 115;
+      const endX = 250, endY = 115;
+      ctx.beginPath();
+      ctx.moveTo(startX, startY);
+      ctx.lineTo(startX + (endX-startX)*cutProgress, startY + (endY-startY)*cutProgress);
+      ctx.strokeStyle = '#8B1A1A'; ctx.lineWidth = 2.5;
+      ctx.setLineDash([]); ctx.stroke();
+      // blood drop at tip
+      if (cutProgress > 0.1) {
+        const dx = startX + (endX-startX)*cutProgress;
+        ctx.beginPath(); ctx.arc(dx, startY+4, 3, 0, Math.PI*2);
+        ctx.fillStyle = 'rgba(139,26,26,0.8)'; ctx.fill();
+      }
+    }
+
+    // Loop
+    if (t > 200) t = 50;
+
+    ctx.font = '14px "Cormorant Garamond"';
+    ctx.fillStyle = '#5C3317'; ctx.textAlign = 'center';
+    ctx.fillText('Leaf template measurement', 220, 400);
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ── C5: Flap Harvest — animated pedicle flap ──
+(function() {
+  const cv = document.getElementById('c5');
+  const ctx = cv.getContext('2d');
+  const W = 440, H = 440;
+  let t = 0;
+
+  function draw() {
+    ctx.clearRect(0,0,W,H);
+    parchmentBg(ctx, W, H, '#2C1810', '#3d2010');
+    t++;
+
+    const flap = Math.min(1, t / 150);
+    const pulse = 0.05 * Math.sin(t / 20);
+
+    // Forehead silhouette
+    ctx.beginPath();
+    ctx.ellipse(220, 160, 110, 80, 0, 0, Math.PI);
+    ctx.fillStyle = '#D4956A'; ctx.fill();
+
+    // Pedicle flap lifting
+    ctx.save();
+    const flapAngle = flap * 0.8;
+    ctx.translate(220, 155);
+    ctx.rotate(-flapAngle);
+
+    ctx.beginPath();
+    ctx.moveTo(-40, 0);
+    ctx.quadraticCurveTo(-40, -60, 0, -70);
+    ctx.quadraticCurveTo(40, -60, 40, 0);
+    ctx.closePath();
+    ctx.fillStyle = `rgba(255,140,80,${0.7 + pulse})`;
+    ctx.fill();
+    ctx.strokeStyle = '#8B1A1A'; ctx.lineWidth = 2; ctx.stroke();
+
+    // Underside vessels
+    ctx.beginPath();
+    ctx.moveTo(0,0); ctx.lineTo(0,-60);
+    ctx.strokeStyle = 'rgba(139,26,26,0.8)'; ctx.lineWidth = 3; ctx.stroke();
+    ctx.restore();
+
+    // Nose defect area
+    ctx.beginPath();
+    ctx.ellipse(220, 290, 35, 28, 0, 0, Math.PI*2);
+    ctx.fillStyle = 'rgba(139,26,26,0.3)'; ctx.fill();
+    ctx.setLineDash([5,5]);
+    ctx.strokeStyle = '#E8750A'; ctx.lineWidth = 1.5; ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Arrow if flap lifted enough
+    if (flap > 0.5) {
+      const arrowA = Math.max(0, (flap - 0.5)*2);
+      ctx.save(); ctx.globalAlpha = arrowA;
+      ctx.beginPath();
+      ctx.moveTo(220, 220); ctx.lineTo(220, 265);
+      ctx.strokeStyle = '#F0A500'; ctx.lineWidth = 2;
+      ctx.setLineDash([4,4]); ctx.stroke(); ctx.setLineDash([]);
+      ctx.beginPath();
+      ctx.moveTo(213,258); ctx.lineTo(220,268); ctx.lineTo(227,258);
+      ctx.fillStyle = '#F0A500'; ctx.fill();
+      ctx.restore();
+    }
+
+    if (t > 220) t = 30;
+
+    ctx.font = '14px "Cormorant Garamond"';
+    ctx.fillStyle = 'rgba(245,236,215,0.8)'; ctx.textAlign = 'center';
+    ctx.fillText('Pedicle flap raised — blood supply preserved', 220, 415);
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ── C6: Suturing — animated needle & thread ──
+(function() {
+  const cv = document.getElementById('c6');
+  const ctx = cv.getContext('2d');
+  const W = 440, H = 440;
+  let t = 0;
+
+  function draw() {
+    ctx.clearRect(0,0,W,H);
+    parchmentBg(ctx, W, H, '#F5ECD7', '#E8D5B0');
+    t++;
+
+    // Nose shape (reconstructed)
+    ctx.beginPath();
+    ctx.moveTo(185, 200);
+    ctx.quadraticCurveTo(185, 280, 220, 300);
+    ctx.quadraticCurveTo(255, 280, 255, 200);
+    ctx.fillStyle = '#D4956A'; ctx.fill();
+    ctx.strokeStyle = '#8B4513'; ctx.lineWidth = 2; ctx.stroke();
+
+    // Suture points and thread
+    const sutures = [
+      [185,200],[190,230],[195,260],[210,285],[220,300],[230,285],[245,260],[250,230],[255,200]
+    ];
+
+    // Draw completed sutures
+    const progress = (t % 300) / 300;
+    const done = Math.floor(progress * sutures.length);
+
+    for (let i = 0; i < done - 1; i++) {
+      const [x1,y1] = sutures[i];
+      const [x2,y2] = sutures[i+1];
+      ctx.beginPath();
+      ctx.moveTo(x1,y1); ctx.lineTo(x2,y2);
+      ctx.strokeStyle = '#C9941A'; ctx.lineWidth = 1.5;
+      ctx.setLineDash([2,3]); ctx.stroke(); ctx.setLineDash([]);
+      // Dot
+      ctx.beginPath(); ctx.arc(x1,y1,3,0,Math.PI*2);
+      ctx.fillStyle = '#8B1A1A'; ctx.fill();
+    }
+
+    // Animated needle
+    if (done < sutures.length) {
+      const [nx,ny] = sutures[done];
+      const pulse = Math.sin(t/10)*3;
+      ctx.beginPath();
+      ctx.moveTo(nx-15+pulse, ny-15);
+      ctx.bezierCurveTo(nx-5,ny-10,nx+5,ny-5,nx,ny);
+      ctx.strokeStyle = '#888'; ctx.lineWidth = 2.5; ctx.stroke();
+      // Thread trail
+      if (done > 0) {
+        const [px,py] = sutures[done-1];
+        ctx.beginPath(); ctx.moveTo(px,py);
+        ctx.bezierCurveTo(px-20,py-20,nx-20,ny-20,nx,ny);
+        ctx.strokeStyle = '#C9941A'; ctx.lineWidth = 1;
+        ctx.setLineDash([3,4]); ctx.stroke(); ctx.setLineDash([]);
+      }
+    }
+
+    // Reed stents
+    ctx.beginPath(); ctx.ellipse(208,252,6,15,0,0,Math.PI*2);
+    ctx.strokeStyle = '#7aaa30'; ctx.lineWidth = 2; ctx.stroke();
+    ctx.beginPath(); ctx.ellipse(232,252,6,15,0,0,Math.PI*2);
+    ctx.stroke();
+
+    ctx.font = '13px "Cormorant Garamond"';
+    ctx.fillStyle = '#5C3317'; ctx.textAlign = 'center';
+    ctx.fillText('Hemp sutures with reed stents', 220, 400);
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ── C7: Wound dressing — bandage wrapping ──
+(function() {
+  const cv = document.getElementById('c7');
+  const ctx = cv.getContext('2d');
+  const W = 440, H = 440;
+  let t = 0;
+
+  function draw() {
+    ctx.clearRect(0,0,W,H);
+    parchmentBg(ctx, W, H, '#FDF6E8', '#F0E0B8');
+    t++;
+
+    // Head
+    ctx.beginPath(); ctx.ellipse(220,200,100,130,0,0,Math.PI*2);
+    ctx.fillStyle = '#D4956A'; ctx.fill();
+    ctx.strokeStyle = '#8B4513'; ctx.lineWidth = 2; ctx.stroke();
+
+    // Bandage wrapping animation
+    const wraps = 5;
+    const progress = Math.min(1, (t % 200) / 180);
+    const bandageAngle = progress * wraps * Math.PI * 2;
+
+    ctx.save();
+    ctx.translate(220,200);
+    ctx.beginPath();
+    for (let a = 0; a <= bandageAngle; a += 0.05) {
+      const r = 80 + (a/(wraps*Math.PI*2))*20;
+      const spiral_y = -40 + (a/(wraps*Math.PI*2))*80;
+      const x = Math.cos(a) * r * 0.9;
+      const y = spiral_y + Math.sin(a)*20;
+      a === 0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+    }
+    ctx.strokeStyle = 'rgba(245,236,215,0.9)'; ctx.lineWidth = 8;
+    ctx.lineCap = 'round'; ctx.stroke();
+    ctx.strokeStyle = 'rgba(181,101,29,0.3)'; ctx.lineWidth = 8.5; ctx.stroke();
+    ctx.restore();
+
+    // Oil drip
+    const oilY = 60 + ((t*0.8) % 120);
+    ctx.beginPath(); ctx.ellipse(300, oilY, 4, 7, 0, 0, Math.PI*2);
+    ctx.fillStyle = 'rgba(184,142,74,0.8)'; ctx.fill();
+
+    // Herb label
+    const herbs = ['Ghrita','Tila','Neem','Turmeric'];
+    herbs.forEach((h,i) => {
+      const visible = Math.floor(t/80) % herbs.length === i;
+      ctx.save(); ctx.globalAlpha = visible ? 1 : 0.2;
+      ctx.font = '13px "Cormorant Garamond"';
+      ctx.fillStyle = '#4a7a20';
+      ctx.textAlign = 'center';
+      ctx.fillText('🌿 ' + h, 330, 180 + i*30);
+      ctx.restore();
+    });
+
+    ctx.font = '13px "Cormorant Garamond"';
+    ctx.fillStyle = '#5C3317'; ctx.textAlign = 'center';
+    ctx.fillText('Medicated Shiroband dressing', 220, 400);
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ── C8: Recovery — blooming lotus / healing ──
+(function() {
+  const cv = document.getElementById('c8');
+  const ctx = cv.getContext('2d');
+  const W = 440, H = 440;
+  let t = 0;
+
+  function drawPetal(ctx, cx, cy, r, angle, open, col) {
+    ctx.save(); ctx.translate(cx,cy); ctx.rotate(angle);
+    ctx.beginPath();
+    ctx.ellipse(0, -r*open*0.5, r*0.2*open, r*open, 0, 0, Math.PI*2);
+    ctx.fillStyle = col; ctx.fill();
+    ctx.restore();
+  }
+
+  function draw() {
+    ctx.clearRect(0,0,W,H);
+    parchmentBg(ctx, W, H, '#1a0a05', '#2C1810');
+    t++;
+
+    const bloom = (Math.sin(t/120)+1)/2;
+    const cx = 220, cy = 200;
+
+    // Water ripples
+    for (let r = 20; r < 180; r += 25) {
+      const wr = r + Math.sin(t/40+r)*3;
+      ctx.beginPath(); ctx.arc(cx,cy+60,wr,0,Math.PI*2);
+      ctx.strokeStyle = `rgba(74,122,200,${0.15 - r/1500})`; ctx.lineWidth = 1; ctx.stroke();
+    }
+
+    // Stem
+    ctx.beginPath(); ctx.moveTo(cx,cy+30); ctx.lineTo(cx,cy+120);
+    ctx.strokeStyle = '#4a7a20'; ctx.lineWidth = 4; ctx.stroke();
+
+    // Petals
+    const cols = ['#E8750A','#F0A500','#D4526A','#F0A500','#E8750A','#F0A500','#D4526A','#F0A500'];
+    for (let i = 0; i < 8; i++) {
+      drawPetal(ctx, cx, cy, 70*bloom, (i/8)*Math.PI*2, bloom, cols[i]);
+    }
+
+    // Inner petals
+    for (let i = 0; i < 6; i++) {
+      drawPetal(ctx, cx, cy, 45*bloom, (i/6)*Math.PI*2+0.3, bloom*0.8, '#F5C842');
+    }
+
+    // Center
+    ctx.beginPath(); ctx.arc(cx,cy,12*bloom+3,0,Math.PI*2);
+    const g2 = ctx.createRadialGradient(cx,cy,0,cx,cy,15);
+    g2.addColorStop(0,'#FFF5A0'); g2.addColorStop(1,'#C9941A');
+    ctx.fillStyle = g2; ctx.fill();
+
+    // Healing sparks
+    for (let i = 0; i < 6; i++) {
+      const sa = (t/40 + i*(Math.PI/3));
+      const sr = 30 + bloom*50;
+      const sx = cx + Math.cos(sa)*sr;
+      const sy = cy + Math.sin(sa)*sr;
+      ctx.beginPath(); ctx.arc(sx,sy,2+bloom*2,0,Math.PI*2);
+      ctx.fillStyle = `rgba(240,165,0,${bloom*0.8})`; ctx.fill();
+    }
+
+    // Text
+    ctx.font = '16px "Tiro Devanagari Sanskrit"';
+    ctx.fillStyle = 'rgba(240,165,0,0.8)'; ctx.textAlign = 'center';
+    ctx.fillText('आरोग्यम् — Healing', cx, 390);
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+</body>
+</html>
